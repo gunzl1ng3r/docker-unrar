@@ -9,8 +9,7 @@
 ## usage
 
 * default behaviour is to run `find . -name '*.rar' -exec unrar e {} \;` in `/files` (find all `.rar` files and unrars them to `/files`)
-  * `docker container run -v /opt/storage/05_upload:/files gunzl1ng3r/unrar:latest`
-  * `docker container run -d -v /opt/storage/04_done:/files gunzl1ng3r/unrar:latest`
-
-* manual call to `unrar` could look like this
-  * `docker run --rm -v /opt/storage/05_upload:/files gunzl1ng3r/unrar:latest unrar e -r MY_FILE.rar`
+  * run in foreground
+    * `docker container run -v /opt/storage:/files gunzl1ng3r/unrar:latest`
+  * run in background
+    * `docker container run -d -v /opt/storage:/files gunzl1ng3r/unrar:latest`
